@@ -51,24 +51,118 @@
         </table>
     </div>
 
-<!--    <div id="by-degree">-->
-<!--        <div>Tabela 3: Distribuição de frequência do grau de instrução</div>-->
-<!--        <table>-->
-<!--            <thead>-->
-<!--            <tr>-->
-<!--                <th v-for="header in tableHeaders" v-html="header"></th>-->
-<!--            </tr>-->
-<!--            </thead>-->
-<!--            <tbody>-->
-<!--            <tr v-for="row in tableRows">-->
-<!--                <td v-for="rowData in row" v-html="rowData"></td>-->
-<!--            </tr>-->
-<!--            </tbody>-->
-<!--        </table>-->
-<!--    </div>-->
+    <br>
+
+    <div id="by-degree">
+        <div class="table-title">Tabela 3: Distribuição de frequência do grau de instrução</div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="header in tableHeaders" v-html="header"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="row in tableRows">
+                <td v-for="rowData in row" v-html="rowData"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <div id="by-cost">
+        <div class="table-title">Tabela 4: Distribuição de frequência custo da festa</div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="header in tableHeaders" v-html="header"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="row in tableRows">
+                <td v-for="rowData in row" v-html="rowData"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <div id="by-where">
+        <div class="table-title">Tabela 5: Distribuição de frequência do local/período da festa</div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="header in tableHeaders" v-html="header"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="row in tableRows">
+                <td v-for="rowData in row" v-html="rowData"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <div id="by-food">
+        <div class="table-title">Tabela 6: Distribuição de frequência da preferência por comida</div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="header in tableHeaders" v-html="header"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="row in tableRows">
+                <td v-for="rowData in row" v-html="rowData"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <div id="by-music">
+        <div class="table-title">Tabela 7: Distribuição de frequência da preferência por música</div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="header in tableHeaders" v-html="header"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="row in tableRows">
+                <td v-for="rowData in row" v-html="rowData"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <div id="by-like-dance">
+        <div class="table-title">Tabela 8: Distribuição de frequência gosto por dança</div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="header in tableHeaders" v-html="header"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="row in tableRows">
+                <td v-for="rowData in row" v-html="rowData"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <!--    <canvas id="myChart" width="400" height="400"></canvas>-->
     <script src="question.js"></script>
     <script src="script.js"></script>
+    <script src="byAge.js"></script>
+    <script src="byGender.js"></script>
 </body>
 </html>

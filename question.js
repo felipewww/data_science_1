@@ -1,45 +1,45 @@
-window.questions = {
-    genre: {
-        options: ['m', 'f']
-    },
-    age: {},
-    degree: {
-        options: ['Não estudou', 'Fundamental', 'Médio', 'Superior']
-    },
-    spendDisposition: {}, // 20 a 39 40 a 59 60 a 79 80 a 99 Mais de 100
-    where: {
-        options: [
-            'Um restaurante, no jantar',
-            'Um restaurante, no almoço',
-            'Um bar, à noite',
-            'Uma chácara, durante o dia',
-        ]
-    },
-    preferredFood: {
-        options: [
-            'Massa',
-            'Regional',
-            'Fast Food', // 2
-            'Carne',
-            'Self Service',// 4
-        ]
-    },
-    preferredMusic: {
-        options: [
-            'Ambiente',
-            'Eletrônica',
-            'Samba',
-            'MPB', //3
-            'Forró',
-            'Sertanejo',
-            'Rock',
-            'Todos os ritmos', //7
-        ]
-    },
-    likeDance: {
-        options: ['yes', 'no']
-    }
-};
+// window.questions = {
+//     genre: {
+//         options: ['m', 'f']
+//     },
+//     age: {},
+//     degree: {
+//         options: ['Não estudou', 'Fundamental', 'Médio', 'Superior']
+//     },
+//     spendDisposition: {}, // 20 a 39 40 a 59 60 a 79 80 a 99 Mais de 100
+//     where: {
+//         options: [
+//             'Um restaurante, no jantar',
+//             'Um restaurante, no almoço',
+//             'Um bar, à noite',
+//             'Uma chácara, durante o dia',
+//         ]
+//     },
+//     preferredFood: {
+//         options: [
+//             'Massa',
+//             'Regional',
+//             'Fast Food', // 2
+//             'Carne',
+//             'Self Service',// 4
+//         ]
+//     },
+//     preferredMusic: {
+//         options: [
+//             'Ambiente',
+//             'Eletrônica',
+//             'Samba',
+//             'MPB', //3
+//             'Forró',
+//             'Sertanejo',
+//             'Rock',
+//             'Todos os ritmos', //7
+//         ]
+//     },
+//     likeDance: {
+//         options: ['yes', 'no']
+//     }
+// };
 
 window.respondents = [
     {
