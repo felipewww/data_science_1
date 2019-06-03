@@ -8,72 +8,30 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <title>Title</title>
-    <style>
-        table tbody tr td {
-            border: 1px solid #ededed;
-        }
-
-        table tbody tr td:first-child {
-            background: #deeede;
-        }
-        table {
-            text-align: center;
-            width: 100%;
-        }
-        body {
-            font-family: sans-serif;
-            font-size: 14px;
-        }
-        table th {
-            background: green;
-            color: #fff;
-            padding: 3px 15px;
-        }
-
-        div.table-box {
-            width: 500px;
-        }
-
-        div.table-title {
-            text-align: center;
-        }
-    </style>
-</head>
 <body>
 <div class="table-box">
-    <div class="table-title">Tabela 1: Distribuição de frequência da variável sexo</div>
-    <table>
-        <thead>
-        <tr>
-            <th>sexo</th>
-            <th>Freq. Abs (fi)</th>
-            <th>Freq. Rel (fr)</th>
-            <th>Porcentagem (fr%)</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr id="by-genre-men">
-            <td>M</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr id="by-genre-women">
-            <td>F</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr id="by-genre-totals">
-            <td>Totais</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
+    <div id="by-gender">
+        <div class="table-title">Tabela 1: Distribuição de frequência da variável sexo</div>
+        <table>
+            <thead>
+                <tr>
+                    <th v-for="header in tableHeaders" v-html="header"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="row in tableRows">
+                    <td v-for="rowData in row" v-html="rowData"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <!--    <canvas id="myChart" width="400" height="400"></canvas>-->
     <script src="question.js"></script>

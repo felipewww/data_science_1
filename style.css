@@ -1,0 +1,28 @@
+table tbody tr td {
+    border: 1px solid #ededed;
+}
+
+table tbody tr td:first-child {
+    background: #deeede;
+}
+table {
+    text-align: center;
+    width: 100%;
+}
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+table th {
+    background: green;
+    color: #fff;
+    padding: 3px 15px;
+}
+
+div.table-box {
+    width: 500px;
+}
+
+div.table-title {
+    text-align: center;
+}

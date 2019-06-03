@@ -36,37 +36,66 @@
 //     }
 // });
 
-function byGenre() {
-    let men = 0;
-    let women = 0;
+new Vue({
+    el: '#by-gender',
+    data: {
+        tableHeaders: [
+            'sexo',
+            'Freq. Abs (fi)',
+            'Freq. Rel (fr)',
+            'Porcentagem (fr%)',
+        ],
+        tableRows: [],
+    },
+    mounted(){
+        this.$nextTick(() => {
+            let men = 0;
+            let women = 0;
 
-    for(let person of window.respondents){
-        if (person.genre === 0) {
-            men++;
-        } else {
-            women++;
-        }
+            for(let person of window.respondents){
+                if (person.genre === 0) {
+                    men++;
+                } else {
+                    women++;
+                }
+            }
+
+            let relativeFrequencies = getRelativeFrequency([men, women], window.respondents.length);
+            let men_fr = relativeFrequencies[0];
+            let women_fr = relativeFrequencies[1];
+
+            this.tableRows[0] = [
+                'M',
+                men,
+                men_fr.relative,
+                men_fr.percentString,
+            ];
+
+            this.tableRows[1] = [
+                'F',
+                women,
+                women_fr.relative,
+                women_fr.percentString,
+            ];
+
+            this.tableRows[2] = [
+                'Totais',
+                men + women,
+                men_fr.relative+women_fr.relative,
+                (men_fr.percent + women_fr.percent)+'%',
+            ];
+
+            this.$forceUpdate();
+        });
+    }
+});
+
+function getRelativeFrequency(absoluteFrequencies, total) {
+    let res = [];
+    for (let fr of absoluteFrequencies){
+        let frequency = fr/total;
+        res[res.length] = { relative: frequency, percent: frequency*100, percentString: (frequency*100)+'%' }
     }
 
-    let men_fi = men/window.respondents.length;
-    let women_fi = women/window.respondents.length;
-
-    let tr_men = document.getElementById('by-genre-men');
-    let tr_women = document.getElementById('by-genre-women');
-    let tr_totals = document.getElementById('by-genre-totals');
-
-    tr_men.getElementsByTagName('td')[1].innerHTML = men;
-    tr_women.getElementsByTagName('td')[1].innerHTML = women;
-    tr_totals.getElementsByTagName('td')[1].innerHTML = men+women;
-
-    tr_men.getElementsByTagName('td')[2].innerHTML = men_fi;
-    tr_women.getElementsByTagName('td')[2].innerHTML = women_fi;
-    tr_totals.getElementsByTagName('td')[2].innerHTML = men_fi+women_fi;
-
-    tr_men.getElementsByTagName('td')[3].innerHTML = (men_fi*100)+'%';
-    tr_women.getElementsByTagName('td')[3].innerHTML = (women_fi*100)+'%';
-    tr_totals.getElementsByTagName('td')[3].innerHTML = ((men_fi+women_fi)*100)+'%';
+    return res;
 }
-
-byGenre();
-// console.log(window.respondents);
