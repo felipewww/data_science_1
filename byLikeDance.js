@@ -2,7 +2,7 @@ new Vue({
     el: '#by-like-dance',
     data: {
         tableHeaders: [
-            'sexo',
+            'Gosta de dançar',
             'Freq. Abs (fi)',
             'Freq. Rel (fr)',
             'Porcentagem (fr%)',

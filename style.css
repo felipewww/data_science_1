@@ -26,3 +26,8 @@ div.table-box {
 div.table-title {
     text-align: center;
 }
+
+div.table-box {
+    width: 900px;
+    margin: 0 auto;
+}
