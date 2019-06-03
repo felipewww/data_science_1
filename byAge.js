@@ -77,10 +77,20 @@ new Vue({
                     ]
                 },
                 options: {
+                    plugins: {
+                        labels: {
+                            // render 'label', 'value', 'percentage', 'image' or custom function, default is 'percentage'
+                            render: (settings) => {
+                                return this.tableRows[settings.index][3];
+                            },
+                        }
+                    },
                     legend: {
                         display: false,
                     },
+                    showAllTooltips: true,
                     tooltips: {
+                        enabled: true,
                         callbacks: {
                             label: (tooltipItem) => {
                                 console.log(tooltipItem);
