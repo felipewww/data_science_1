@@ -1,8 +1,8 @@
 new Vue({
-    el: '#by-gender',
+    el: '#by-food',
     data: {
         tableHeaders: [
-            'sexo',
+            'comida',
             'Freq. Abs (fi)',
             'Freq. Rel (fr)',
             'Porcentagem (fr%)',
@@ -10,19 +10,19 @@ new Vue({
         tableRows: [],
     },
     mounted(){
+
         $colsNames = [
-            'Masculino',
-            'Feminino'
+            'Massas',
+            'Regional',
+            'fast-food',
+            'Carne',
+            'Self-service',
         ];
 
         mountTableRows($colsNames, this.tableRows);
 
         for(let person of window.respondents){
-            if (person.genre === 0) {
-                this.tableRows[0][1]++;
-            } else {
-                this.tableRows[1][1]++;
-            }
+            this.tableRows[person.preferredFood][1]++;
         }
 
         let absoluteFrequencies = getTableRowsAbsoluteFrequency(this.tableRows);

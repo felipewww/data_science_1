@@ -1,8 +1,8 @@
 new Vue({
-    el: '#by-age',
+    el: '#by-cost',
     data: {
         tableHeaders: [
-            'Idade',
+            'custo',
             'Freq. Abs (fi)',
             'Freq. Rel (fr)',
             'Porcentagem (fr%)',
@@ -10,13 +10,13 @@ new Vue({
         tableRows: [],
     },
     mounted(){
+
         $colsNames = [
-            '18 |- 24',
-            '24 |- 30',
-            '30 |- 36',
-            '36 |- 42',
-            '42 |- 48',
-            '48 ou +',
+            '20 |- 40',
+            '40 |- 60',
+            '60 |- 80',
+            '80 |- 100',
+            '100 ou +',
         ];
 
         mountTableRows($colsNames, this.tableRows);
@@ -24,18 +24,16 @@ new Vue({
         for(let person of window.respondents){
             let idxSelected = null;
 
-            if (person.age < 24) {
+            if (person.spendDisposition < 40) {
                 idxSelected = 0;
-            } else if (person.age < 30) {
+            } else if (person.spendDisposition < 60) {
                 idxSelected = 1;
-            } else if (person.age < 36) {
+            } else if (person.spendDisposition < 80) {
                 idxSelected = 2;
-            } else if (person.age < 42) {
+            } else if (person.spendDisposition < 100) {
                 idxSelected = 3;
-            } else if (person.age < 48) {
+            }  else {
                 idxSelected = 4;
-            } else {
-                idxSelected = 5;
             }
 
             this.tableRows[idxSelected][1]++;

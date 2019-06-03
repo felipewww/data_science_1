@@ -1,8 +1,8 @@
 new Vue({
-    el: '#by-gender',
+    el: '#by-degree',
     data: {
         tableHeaders: [
-            'sexo',
+            'grau de instrução',
             'Freq. Abs (fi)',
             'Freq. Rel (fr)',
             'Porcentagem (fr%)',
@@ -10,19 +10,18 @@ new Vue({
         tableRows: [],
     },
     mounted(){
+
         $colsNames = [
-            'Masculino',
-            'Feminino'
+            'Não estudou',
+            'Fundamental',
+            'Médio',
+            'Superior',
         ];
 
         mountTableRows($colsNames, this.tableRows);
 
         for(let person of window.respondents){
-            if (person.genre === 0) {
-                this.tableRows[0][1]++;
-            } else {
-                this.tableRows[1][1]++;
-            }
+            this.tableRows[person.degree][1]++;
         }
 
         let absoluteFrequencies = getTableRowsAbsoluteFrequency(this.tableRows);

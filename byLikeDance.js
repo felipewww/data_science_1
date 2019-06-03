@@ -1,5 +1,5 @@
 new Vue({
-    el: '#by-gender',
+    el: '#by-like-dance',
     data: {
         tableHeaders: [
             'sexo',
@@ -11,17 +11,17 @@ new Vue({
     },
     mounted(){
         $colsNames = [
-            'Masculino',
-            'Feminino'
+            'Sim',
+            'Não'
         ];
 
         mountTableRows($colsNames, this.tableRows);
 
         for(let person of window.respondents){
-            if (person.genre === 0) {
-                this.tableRows[0][1]++;
-            } else {
+            if (person.likeDance) {
                 this.tableRows[1][1]++;
+            } else {
+                this.tableRows[0][1]++;
             }
         }
 
