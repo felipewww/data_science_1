@@ -32,6 +32,40 @@
             </tbody>
         </table>
     </div>
+
+    <br>
+
+    <div id="by-age">
+        <div class="table-title">Tabela 2: Distribuição de frequência da variável idade</div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="header in tableHeaders" v-html="header"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="row in tableRows">
+                <td v-for="rowData in row" v-html="rowData"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!--    <div id="by-degree">-->
+<!--        <div>Tabela 3: Distribuição de frequência do grau de instrução</div>-->
+<!--        <table>-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--                <th v-for="header in tableHeaders" v-html="header"></th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr v-for="row in tableRows">-->
+<!--                <td v-for="rowData in row" v-html="rowData"></td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
 </div>
 <!--    <canvas id="myChart" width="400" height="400"></canvas>-->
     <script src="question.js"></script>
