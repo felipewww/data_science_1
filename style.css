@@ -31,3 +31,10 @@ div.table-box {
     width: 900px;
     margin: 0 auto;
 }
+
+.table-title {
+    font-size: 18px;
+    font-weight: bold;
+    background: #eeeeee;
+    padding: 15px;
+}
